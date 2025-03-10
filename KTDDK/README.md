@@ -39,6 +39,23 @@ def calculate_eat_cost(t: int, v: int) -> int:
 ## CFG
 ![CFG](image.png)
 
+Xây dựng các đường đi thỏa mãn độ phủ C2 (phủ nhánh) và sinh các ca kiểm thử ứng với đường đi
+- Đường đi 1:   1 → 2 (T) → 3
+    
+    ⇒ Ca kiểm thử 1: calculate_eat_cost(t = 0, v = -1)
+    Bcov = 1/6
+    
+- Đường đi 2:   1 → 2(F) → 4 → 5(T) → 6 → 7 (T) → 9
+    
+    ⇒ ca kiểm thử 2: calculate_eat_cost (t = 15, v = 15)
+    Bcov = 4 / 6
+    
+- Đường đi 3:   1 → 2(F) → 4 → 5(F) → 6 → 7 (F) → 9
+    
+    ⇒ ca kiểm thử 3: calculate_eat_cost (t = 25, v = 12)
+    
+    Bcov = 6 / 6 = 100%
+
 ## Testing tool 
 Sử dụng `pytest` để viết hàm test, set up nhanh
 
